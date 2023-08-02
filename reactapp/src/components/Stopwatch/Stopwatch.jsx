@@ -43,7 +43,7 @@ export default function Stopwatch(props){
             <div className='inner' >
             <h1> React Stopwatch </h1>
 
-            <p className='timer' id='time' data-testid='time'>{`0${Math.floor(time % 360000)}`.slice(-2)} : {`0${Math.floor(time/60000) % 60}`.slice(-2)} : {`0${Math.floor(time/1000) % 60}`.slice(-2)} </p>
+            <p className='timer digits .mili-sec' id='time' data-testid='time'>{`0${Math.floor(time % 360000)}`.slice(-2)} : {`0${Math.floor(time/60000) % 60}`.slice(-2)} : {`0${Math.floor(time/1000) % 60}`.slice(-2)} </p>
 
             <div className='Control-Buttons'>
             
@@ -55,7 +55,7 @@ export default function Stopwatch(props){
               )
             }
 
-          <button className='btn' id='reset' data-testid='reset' onClick={handleReset} disabled={!isActive}>Reset</button>
+          <button className='btn'  id='reset' data-testid='reset' onClick={handleReset} disabled={!isActive}>Reset</button>
         </div>
         </div>
 
