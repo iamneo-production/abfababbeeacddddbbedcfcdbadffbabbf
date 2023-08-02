@@ -1,5 +1,5 @@
 import { useState, useRef, React } from "react";
-import '/home/coder/project/workspace/reactapp/src/App.css';
+import '../';
 
 
 export default function Stopwatch(props){
@@ -60,5 +60,5 @@ export default function Stopwatch(props){
         </div>
 
         </section>
-    )
+    );
 }
