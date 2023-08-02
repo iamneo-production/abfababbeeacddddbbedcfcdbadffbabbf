@@ -1,5 +1,5 @@
 import { useState, useRef, React } from "react";
-import '../';
+import '../../App.css';
 
 
 export default function Stopwatch(props){
@@ -39,23 +39,23 @@ export default function Stopwatch(props){
     };
 
     return(
-        <section id='stopwatch'>
+        <section className='stop-watch'>
             <div className='inner' >
             <h1> React Stopwatch </h1>
 
-            <p id='time' data-testid='time'>{`0${Math.floor(time % 360000)}`.slice(-2)} : {`0${Math.floor(time/60000) % 60}`.slice(-2)} : {`0${Math.floor(time/1000) % 60}`.slice(-2)} </p>
+            <p className='timer' id='time' data-testid='time'>{`0${Math.floor(time % 360000)}`.slice(-2)} : {`0${Math.floor(time/60000) % 60}`.slice(-2)} : {`0${Math.floor(time/1000) % 60}`.slice(-2)} </p>
 
-            <div className='buttons'>
+            <div className='Control-Buttons'>
             
             {
-            !isActive && !isPaused?
-              <button onClick={handleStart} data-testid='start'>Start</button>
+            !isActive && !isPaused ?
+              <button className='btn' onClick={handleStart} data-testid='start'>Start</button>
               : (
-                !isPaused ? <button data-testid='pause' onClick={handlePause}>Pause</button> :  <button data-testid='resume' onClick={handleResume}>Resume</button>
+                !isPaused ? <button className='btn' data-testid='pause' onClick={handlePause}>Pause</button> :  <button className='btn' data-testid='resume' onClick={handleResume}>Resume</button>
               )
             }
 
-          <button id='reset' data-testid='reset' onClick={handleReset} disabled={!isActive}>Reset</button>
+          <button className='btn' id='reset' data-testid='reset' onClick={handleReset} disabled={!isActive}>Reset</button>
         </div>
         </div>
 
